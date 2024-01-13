@@ -156,6 +156,9 @@ func (w *window) doShow() {
 		if w.centered {
 			w.doCenterOnScreen() // lastly center if that was requested
 		}
+		if w.xpos != 0 || w.ypos != 0 {
+			w.viewport.SetPos(w.xpos, w.ypos)
+		}
 		view.Show()
 
 		// save coordinates
@@ -998,6 +1001,13 @@ func (d *gLDriver) CreateSplashWindow() fyne.Window {
 	win := d.createWindow("", false)
 	win.SetPadded(false)
 	win.CenterOnScreen()
+	return win
+}
+
+func (d *gLDriver) CreateSplashWindowByPosition(x, y int) fyne.Window {
+	win := d.createWindow("", false)
+	win.SetPadded(false)
+	win.SetPosition(x, y)
 	return win
 }
 

@@ -802,3 +802,7 @@ func (w *window) view() *glfw.Window {
 	}
 	return w.viewport
 }
+
+func (w *window) SetPosition(x, y int) {
+	w.xpos, w.ypos = x, y
+}
