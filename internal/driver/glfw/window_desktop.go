@@ -813,3 +813,8 @@ func (w *window) GetMonitorSizeForWindow() (int, int, int, int) {
 	x, y := monitor.GetPos()
 	return monMode.Width, monMode.Height, x, y
 }
+
+func (w *window) GetWorkArea() (int, int, int, int) {
+	monitor := w.getMonitorForWindow()
+	return monitor.GetWorkarea()
+}

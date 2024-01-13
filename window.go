@@ -106,4 +106,6 @@ type Window interface {
 	SetPosition(int, int)
 
 	GetMonitorSizeForWindow() (int, int, int, int)
+
+	GetWorkArea() (int, int, int, int)
 }
