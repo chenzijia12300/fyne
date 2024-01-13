@@ -104,4 +104,6 @@ type Window interface {
 	Clipboard() Clipboard
 
 	SetPosition(int, int)
+
+	GetMonitorSizeForWindow() (int, int, int, int)
 }

@@ -8,6 +8,8 @@ type Driver interface {
 	// Create a new borderless window that is centered on screen
 	CreateSplashWindow() fyne.Window
 
+	CreateSplashWindowByPosition(int, int) fyne.Window
+
 	// Gets the set of key modifiers that are currently active
 	//
 	// Since: 2.4

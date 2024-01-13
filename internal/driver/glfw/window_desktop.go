@@ -806,3 +806,10 @@ func (w *window) view() *glfw.Window {
 func (w *window) SetPosition(x, y int) {
 	w.xpos, w.ypos = x, y
 }
+
+func (w *window) GetMonitorSizeForWindow() (int, int, int, int) {
+	monitor := w.getMonitorForWindow()
+	monMode := monitor.GetVideoMode()
+	x, y := monitor.GetPos()
+	return monMode.Width, monMode.Height, x, y
+}
